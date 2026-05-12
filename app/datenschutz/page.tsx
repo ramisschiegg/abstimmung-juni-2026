@@ -20,7 +20,7 @@ export default function DatenschutzPage() {
         <h2 className="font-semibold text-gray-900 text-base">1. Verantwortliche Person</h2>
         <p>
           Ramis Schiegg<br />
-          [Strasse und Hausnummer], [PLZ Ort], Schweiz<br />
+          Bahnhofstrasse 99J, 8620 Wetzikon, Schweiz<br />
           E-Mail:{" "}
           <a href="mailto:ramis.schiegg@hotmail.com" className="text-blue-600 hover:underline">
             ramis.schiegg@hotmail.com

@@ -15,8 +15,8 @@ export default function ImpressumPage() {
         {/* ⚠️  Fülle hier deine Kontaktdaten ein */}
         <p>
           Ramis Schiegg<br />
-          [Strasse und Hausnummer]<br />
-          [PLZ Ort], Schweiz<br />
+          Bahnhofstrasse 99J<br />
+          8620 Wetzikon, Schweiz<br />
         </p>
         <p>
           E-Mail:{" "}
