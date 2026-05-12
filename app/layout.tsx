@@ -22,7 +22,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="bg-white border-b border-gray-200 shadow-sm">
           <div className="mx-auto max-w-4xl px-4 py-4 flex items-center gap-3">
             <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <span className="text-2xl">🇨🇭</span>
+              {/* Swiss cross icon */}
+              <div className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#D52B1E]">
+                <div className="absolute h-[22px] w-[9px] rounded-sm bg-white" />
+                <div className="absolute h-[9px] w-[22px] rounded-sm bg-white" />
+              </div>
               <div>
                 <div className="font-bold text-gray-900 leading-tight">Volksabstimmung</div>
                 <div className="text-xs text-gray-500">14. Juni 2026</div>
