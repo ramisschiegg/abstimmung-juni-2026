@@ -16,6 +16,7 @@
     "@anthropic-ai/sdk": "^0.95.2",
     "@prisma/client": "^5.22.0",
     "crypto-js": "^4.2.0",
+    "dotenv": "^17.4.2",
     "next": "16.2.6",
     "prisma": "^5.22.0",
     "react": "19.2.4",
