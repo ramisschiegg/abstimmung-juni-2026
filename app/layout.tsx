@@ -76,7 +76,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 SRF Abstimmungen
               </a>
             </p>
-            <p>Diese Website ist ein unabhängiges Bürger-Projekt. Kein offizieller Bundesauftrag.</p>
+            <p>Diese Website ist ein unabhängiges, nichtkommerzielles Bürger-Projekt. Kein offizieller Bundesauftrag.</p>
+            <p className="flex flex-wrap justify-center gap-x-3 gap-y-1">
+              <a href="/impressum" className="text-blue-500 hover:underline">Impressum</a>
+              <span className="text-gray-300">·</span>
+              <a href="/datenschutz" className="text-blue-500 hover:underline">Datenschutzerklärung</a>
+              <span className="text-gray-300">·</span>
+              <a
+                href="https://www.edoeb.admin.ch"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                EDÖB
+              </a>
+            </p>
           </div>
         </footer>
       </body>

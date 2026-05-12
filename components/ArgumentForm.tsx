@@ -104,7 +104,13 @@ export default function ArgumentForm({ voteSlug, onSubmitted }: Props) {
       </button>
 
       <p className="text-center text-xs text-gray-400">
-        Anonym · Max. 3 Argumente pro Tag · Deine IP-Adresse wird nur gehasht gespeichert
+        Anonym · Max. 3 Argumente pro Tag · Deine IP-Adresse wird nur als Hash gespeichert.{" "}
+        Eingereichte Texte können zur automatischen Zusammenfassung an Anthropic übermittelt
+        werden. Mehr dazu in der{" "}
+        <a href="/datenschutz" className="underline hover:text-gray-600">
+          Datenschutzerklärung
+        </a>
+        .
       </p>
     </form>
   );
