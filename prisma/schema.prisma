@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Vote {
+  id            String     @id @default(cuid())
+  slug          String     @unique
+  titleDe       String
+  descriptionDe String
+  officialUrl   String
+  infoUrl       String
+  voteDate      DateTime
+  arguments     Argument[]
+  summaries     Summary[]
+  createdAt     DateTime   @default(now())
+}
+
+model Argument {
+  id        String   @id @default(cuid())
+  voteId    String
+  vote      Vote     @relation(fields: [voteId], references: [id])
+  text      String
+  sentiment String
+  ipHash    String
+  createdAt DateTime @default(now())
+}
+
+model Summary {
+  id             String   @id @default(cuid())
+  voteId         String
+  vote           Vote     @relation(fields: [voteId], references: [id])
+  contentDe      String
+  proSummary     String
+  conSummary     String
+  neutralSummary String
+  argumentCount  Int
+  generatedAt    DateTime @default(now())
+}
