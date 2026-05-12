@@ -34,9 +34,11 @@ yarn-error.log*
 .env
 .env.local
 
-# SQLite database files
+# SQLite database files (never commit the live data)
 *.db
 *.db-journal
+*.db-wal
+*.db-shm
 
 # vercel
 .vercel
