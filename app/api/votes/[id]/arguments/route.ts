@@ -18,7 +18,7 @@ export async function GET(
     where: { voteId: vote.id },
     orderBy: { createdAt: "desc" },
     take: 50,
-    select: { id: true, text: true, sentiment: true, createdAt: true },
+    select: { id: true, text: true, sentiment: true, isOfficial: true, source: true, createdAt: true },
   });
 
   return NextResponse.json(args);

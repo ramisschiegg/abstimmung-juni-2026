@@ -22,13 +22,15 @@ model Vote {
 }
 
 model Argument {
-  id        String   @id @default(cuid())
-  voteId    String
-  vote      Vote     @relation(fields: [voteId], references: [id])
-  text      String
-  sentiment String
-  ipHash    String
-  createdAt DateTime @default(now())
+  id         String   @id @default(cuid())
+  voteId     String
+  vote       Vote     @relation(fields: [voteId], references: [id])
+  text       String
+  sentiment  String
+  ipHash     String
+  isOfficial Boolean  @default(false)
+  source     String?
+  createdAt  DateTime @default(now())
 }
 
 model Summary {

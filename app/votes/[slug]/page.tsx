@@ -22,6 +22,8 @@ interface Argument {
   id: string;
   text: string;
   sentiment: "PRO" | "CON" | "NEUTRAL";
+  isOfficial?: boolean;
+  source?: string | null;
   createdAt: string;
 }
 
@@ -152,6 +154,20 @@ export default function VotePage() {
         )}
       </div>
 
+      {/* Official arguments from Abstimmungsbüchlein */}
+      <div className="rounded-2xl border border-gray-200 bg-white p-6 space-y-3">
+        <div className="flex items-center gap-2">
+          <h2 className="font-semibold text-gray-900">Argumente aus dem Abstimmungsbüchlein</h2>
+          <span className="rounded-full bg-gray-100 px-2 py-0.5 text-xs text-gray-500 font-medium">
+            📋 Offiziell
+          </span>
+        </div>
+        <p className="text-xs text-gray-400">
+          Quelle: Erläuterungen des Bundesrates, Bundeskanzlei, Redaktionsschluss 13. März 2026
+        </p>
+        <ArgumentList args={args.filter((a) => a.isOfficial)} />
+      </div>
+
       {/* Submit form */}
       <div className="rounded-2xl border border-blue-100 bg-white p-6 space-y-3">
         <h2 className="font-semibold text-gray-900">Dein Argument einreichen</h2>
@@ -161,13 +177,15 @@ export default function VotePage() {
         />
       </div>
 
-      {/* Recent arguments */}
+      {/* User arguments */}
       <div className="rounded-2xl border border-gray-200 bg-white p-6 space-y-3">
         <div className="flex items-center justify-between">
-          <h2 className="font-semibold text-gray-900">Neueste Argumente</h2>
-          <span className="text-xs text-gray-400">Letzte 50</span>
+          <h2 className="font-semibold text-gray-900">Bürgerstimmen</h2>
+          <span className="text-xs text-gray-400">
+            {args.filter((a) => !a.isOfficial).length} Einträge
+          </span>
         </div>
-        <ArgumentList args={args} />
+        <ArgumentList args={args.filter((a) => !a.isOfficial)} />
       </div>
     </div>
   );
